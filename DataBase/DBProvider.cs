@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using Npgsql;
 
-namespace ConsoleApp1
+namespace Queuservice.DataBase
+
 {
 
-    class DBProvider
+    public static class DBProvider
     {
-        public string sql = "insert into sq values(";
-        public string srv = "Server=127.0.0.1; Port=5432; User Id=postgres; Password=1e2d3r4i5t; Database=SQ;";
-       public void Insert(string task, string dsk, string rdns)
+        public static string sql = "insert into sq values(";
+        public static string srv = "Server=127.0.0.1; Port=5432; User Id=postgres; Password=1e2d3r4i5t; Database=SQ;";
+       public static void Insert(string task, string dsk, string rdns)
        
         {
            
@@ -46,7 +47,7 @@ namespace ConsoleApp1
 
 
         }
-        public void Select()
+        public static void Select()
         {
             NpgsqlConnection con = new NpgsqlConnection(srv);
             NpgsqlCommand com = new NpgsqlCommand("select * from sq", con);

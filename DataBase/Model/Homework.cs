@@ -1,19 +1,18 @@
-﻿using Queuservice.Model;
+﻿using Queuservice.DataBase.Model;
 
 namespace Queueservice.Model
 {
     public class Homework:ITask
     {
-        public Homework(string description, string subject, bool isDone)
+        public Homework(string name, string description, bool isDone)
         {
             Description = description;
-            Subject = subject;
             IsDone = isDone;
+            Name = name;
         }
         public string Description { get; }
-        public string Subject { get; }
         public bool IsDone { get; set; }
 
-
+        public string Name { get; }
     }
 }

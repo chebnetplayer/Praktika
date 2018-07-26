@@ -1,18 +1,19 @@
-﻿using Queuservice.Model;
+﻿using Queuservice.DataBase.Model;
 
-namespace Queueservice.Model
+namespace Queueservice.DataBase.Model
 {
     public class Equal : ITask
     {
-        public Equal(string description, string eq, bool isDone)
+        public Equal(string name, string description, bool isDone)
         {
             Description = description;
-            Eq = eq;
             IsDone = isDone;
+            Name = name;
         }
 
         public string Description { get; }
-        public string Eq { get; }
         public bool IsDone { get; set; }
+
+        public string Name { get; }
     }
 }

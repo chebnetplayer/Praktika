@@ -1,7 +1,8 @@
-﻿namespace Queuservice.Model
+﻿namespace Queuservice.DataBase.Model
 {
-    interface ITask
+    public interface ITask
     {
+       string Name { get; }
        string Description { get;}
        bool IsDone { get; set; }
     }

@@ -1,26 +1,27 @@
 ﻿using System.Xml.Linq;
+using Queueservice.DataBase.Model;
 using Queueservice.Model;
 
 namespace Queueservice.Xml
 {
-    public class XmlParse
+    public static class XmlParse
     {
-       public Homework GetHomework(string xmlString)
+       public static Homework GetHomework(string xmlString)
        {
             var xdoc = XDocument.Parse(xmlString);
-            return new Homework(xdoc.Element("description").Value, xdoc.Element("subject").Value, bool.Parse(xdoc.Element("isdone").Value));
+            return new Homework(xdoc.Element("name").Value, xdoc.Element("description").Value, bool.Parse(xdoc.Element("isdone").Value));
        }
 
-        public Equal GetEqual(string xmlString)
+        public static Equal GetEqual(string xmlString)
         {
             var xdoc = XDocument.Parse(xmlString);
-            return new Equal(xdoc.Element("description").Value, xdoc.Element("eq").Value, bool.Parse(xdoc.Element("isdone").Value));
+            return new Equal(xdoc.Element(xdoc.Element("name").Value, "description").Value, bool.Parse(xdoc.Element("isdone").Value));
         }
 
-        public Walking GetWalking(string xmlString)
+        public static Walking GetWalking(string xmlString)
         {
             var xdoc = XDocument.Parse(xmlString);
-            return new Walking(xdoc.Element("description").Value, xdoc.Element("where").Value, bool.Parse(xdoc.Element("isdone").Value));
+            return new Walking(xdoc.Element(xdoc.Element("name").Value, "description").Value, bool.Parse(xdoc.Element("isdone").Value));
         }
     }
 }
